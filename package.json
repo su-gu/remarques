@@ -9,7 +9,8 @@
     "start": "webpack-dev-server --mode development --open --hot --history-api-fallback",
     "build": "webpack --mode production",
     "check-types": "tsc",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "postinstall": "yarn build"
   },
   "engines": {
     "node": "12.16.1",
