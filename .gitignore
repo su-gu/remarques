@@ -2,3 +2,4 @@ node_modules/
 dist/
 .vscode/
 db.sqlite3
+__pycache__
