@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-
+import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -86,10 +86,10 @@ CORS_ORIGIN_ALLOW_ALL = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME','notepad'),
-        'USER': os.environ.get('DB_USER','notepaduser'),
-        'PASSWORD': os.environ.get('DB_PASS','password'),
-        'HOST': os.environ.get('DB_HOST','localhost'),
+        'NAME': os.environ.get('DB_NAME','dbdcgsh3hlthrd'),
+        'USER': os.environ.get('DB_USER','wybcnglatvhnbr'),
+        'PASSWORD': os.environ.get('DB_PASS','f66761bfdb728941a87949fa6ddfc655e8e5f2ab1bc9aa7c8253a80ad4074479'),
+        'HOST': os.environ.get('DB_HOST','ec2-176-34-97-213.eu-west-1.compute.amazonaws.com'),
         'PORT': os.environ.get('DB_PORT',5432),
     }
 }
@@ -131,3 +131,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+django_heroku.settings(locals())
