@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -86,10 +87,10 @@ CORS_ORIGIN_ALLOW_ALL = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME','dbdcgsh3hlthrd'),
-        'USER': os.environ.get('DB_USER','wybcnglatvhnbr'),
-        'PASSWORD': os.environ.get('DB_PASS','f66761bfdb728941a87949fa6ddfc655e8e5f2ab1bc9aa7c8253a80ad4074479'),
-        'HOST': os.environ.get('DB_HOST','ec2-176-34-97-213.eu-west-1.compute.amazonaws.com'),
+        'NAME': os.environ.get('DB_NAME','notepad'),
+        'USER': os.environ.get('DB_USER','notepaduser'),
+        'PASSWORD': os.environ.get('DB_PASS','password'),
+        'HOST': os.environ.get('DB_HOST','localhost'),
         'PORT': os.environ.get('DB_PORT',5432),
     }
 }
@@ -135,5 +136,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'dist')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 django_heroku.settings(locals())
