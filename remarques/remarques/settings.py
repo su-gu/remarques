@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'remarques.remarques.urls'
+ROOT_URLCONF = 'remarques.urls'
 
 GRAPHENE = {
     'SCHEMA': 'remarques.schema.schema'
