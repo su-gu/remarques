@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'notes',
+    'remarques.notes',
     'graphene_django',
     'django_filters',
 ]
